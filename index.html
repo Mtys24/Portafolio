@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matías (Mtys24) | Full-Stack Dev & SysAdmin</title>
+    <!-- Fonts: Inter for UI, Fira Code for Terminal -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="./styles/main.css">
+</head>
+<body class="bg-dark text-light antialiased">
+    <!-- Blurry gradient background elements -->
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+
+    <header class="navbar glass-nav">
+        <div class="container flex-between nav-content">
+            <a href="#" class="logo">
+                <span class="text-emerald">Mtys24</span><span class="text-cyan">()</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#about">About</a>
+                <a href="#projects">Proyectos</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contacto</a>
+            </nav>
+            <button class="menu-toggle" aria-label="Menu" id="mobile-menu-btn">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Home / Hero Section -->
+        <section id="hero" class="hero section-spacing reveal">
+            <div class="container hero-content">
+                <div class="terminal-badge">
+                    <span class="prompt">root@mtys24:~$</span> <span class="typing-text">./deploy_skills.sh</span>
+                </div>
+                <h1 class="hero-title">
+                    Build. Scale. <span class="text-gradient">Secure.</span>
+                </h1>
+                <h2 class="hero-subtitle">Full-Stack Dev & SysAdmin</h2>
+                <p class="hero-desc">Junior coder on a mission to write clean code and spread smiles 😄</p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">Ver Proyectos <i data-lucide="arrow-right"></i></a>
+                    <a href="#contact" class="btn btn-secondary glass-btn">Contactar</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Bento Grid -->
+        <section id="projects" class="projects section-spacing reveal">
+            <div class="container">
+                <div class="section-header">
+                    <h2><span class="text-cyan">01.</span> Mis Proyectos</h2>
+                    <div class="line-decorator"></div>
+                </div>
+                
+                <div class="bento-grid">
+                    <!-- Project 1: Big/Main -->
+                    <article class="bento-item glass-card card-large">
+                        <div class="card-content">
+                            <div class="card-header">
+                                <i data-lucide="monitor" class="icon-accent text-cyan"></i>
+                                <div class="links">
+                                    <a href="#" aria-label="GitHub"><i data-lucide="github"></i></a>
+                                    <a href="#" aria-label="Live Demo"><i data-lucide="external-link"></i></a>
+                                </div>
+                            </div>
+                            <h3>Room Reservation System</h3>
+                            <p>Plataforma robusta para la gestión y reserva de espacios, con análisis de datos y métricas (KPIs) en tiempo real para optimización de recursos.</p>
+                            <ul class="tech-stack">
+                                <li>Django</li>
+                                <li>MySQL</li>
+                                <li>JavaScript</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- Project 2: Tech/Networking -->
+                    <article class="bento-item glass-card outline-terminal">
+                        <div class="card-content">
+                            <div class="card-header">
+                                <i data-lucide="wifi" class="icon-accent text-emerald"></i>
+                                <div class="links"><a href="#"><i data-lucide="github"></i></a></div>
+                            </div>
+                            <h3>Escáner de Red</h3>
+                            <p>Herramienta Python para análisis de topologías de red, detección de puertos abiertos y vulnerabilidades de manera silenciosa.</p>
+                            <ul class="tech-stack terminal-stack">
+                                <li>Python</li>
+                                <li>Networking</li>
+                                <li>Sockets</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- Project 3: Private/Security -->
+                    <article class="bento-item glass-card">
+                        <div class="card-content">
+                            <div class="card-header">
+                                <i data-lucide="shield-check" class="icon-accent text-cyan"></i>
+                            </div>
+                            <h3>Sistema de Pago de Permisos</h3>
+                            <p>Aplicación crítica focalizada en la lógica de seguridad estricta y validación de permisos a nivel empresarial del lado del servidor.</p>
+                            <ul class="tech-stack">
+                                <li>PHP</li>
+                                <li>Auth Flow</li>
+                                <li>Security</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- Project 4: Modern Web App -->
+                    <article class="bento-item glass-card">
+                        <div class="card-content">
+                            <div class="card-header">
+                                <i data-lucide="layers" class="icon-accent text-emerald"></i>
+                                <div class="links"><a href="#"><i data-lucide="external-link"></i></a></div>
+                            </div>
+                            <h3>Gestión Santa Cruz</h3>
+                            <p>Dashboard municipal moderno y responsivo alimentado por datos asíncronos y componentes interactivos.</p>
+                            <ul class="tech-stack">
+                                <li>React</li>
+                                <li>Vite</li>
+                                <li>CSS3</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills section-spacing reveal">
+            <div class="container">
+                <div class="section-header">
+                    <h2><span class="text-emerald">02.</span> Arsenal Técnico</h2>
+                    <div class="line-decorator"></div>
+                </div>
+
+                <div class="skills-grid">
+                    <!-- Dev -->
+                    <div class="skill-category glass-card">
+                        <div class="category-header">
+                            <i data-lucide="code-2" class="text-cyan"></i>
+                            <h3>Development</h3>
+                        </div>
+                        <ul class="skill-list">
+                            <li><i data-lucide="check-circle-2" class="text-cyan"></i> Python (Django)</li>
+                            <li><i data-lucide="check-circle-2" class="text-cyan"></i> PHP (Laravel)</li>
+                            <li><i data-lucide="check-circle-2" class="text-cyan"></i> JavaScript (React/Vue)</li>
+                            <li><i data-lucide="check-circle-2" class="text-cyan"></i> Node.js</li>
+                            <li><i data-lucide="check-circle-2" class="text-cyan"></i> HTML5 / Modern CSS3</li>
+                        </ul>
+                    </div>
+
+                    <!-- Ops (SysAdmin focus) -->
+                    <div class="skill-category terminal-card outline-terminal">
+                        <div class="category-header terminal-header">
+                            <div class="dots">
+                                <span class="red-dot"></span><span class="yellow-dot"></span><span class="green-dot"></span>
+                            </div>
+                            <span class="term-title">root@ops:~</span>
+                        </div>
+                        <div class="terminal-body font-mono">
+                            <p><span class="prompt">$</span> apt-get install <span class="text-emerald">ops-skills</span></p>
+                            <p class="sysadmin-output">Reading package lists... Done</p>
+                            <ul class="terminal-skill-list">
+                                <li><span class="text-emerald">[OK]</span> AlmaLinux / RedHat</li>
+                                <li><span class="text-emerald">[OK]</span> Docker & Container orchestration</li>
+                                <li><span class="text-emerald">[OK]</span> AWS Services & Cloud Ops</li>
+                                <li class="highlight-sysadmin">> Hardware: Configuración Servidores HP ProLiant (RAID 1) en DL380e Gen8</li>
+                            </ul>
+                            <p><span class="prompt">$</span> <span class="cursor-blink">_</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Data -->
+                    <div class="skill-category glass-card">
+                        <div class="category-header">
+                            <i data-lucide="database" class="text-emerald"></i>
+                            <h3>Data & Tools</h3>
+                        </div>
+                        <ul class="skill-list">
+                            <li><i data-lucide="check-circle-2" class="text-emerald"></i> SQL (MySQL, PostgreSQL)</li>
+                            <li><i data-lucide="check-circle-2" class="text-emerald"></i> MongoDB / NoSQL</li>
+                            <li><i data-lucide="check-circle-2" class="text-emerald"></i> Pandas / NumPy</li>
+                            <li><i data-lucide="check-circle-2" class="text-emerald"></i> Git / Bash Scripting</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About & Contact Section -->
+        <section id="contact" class="contact section-spacing reveal">
+            <div class="container contact-container">
+                <div class="about-card glass-card">
+                    <div class="about-flex" id="about">
+                        <div class="gif-container">
+                            <div class="gif-placeholder">
+                                <span class="gif-text">c:</span>
+                            </div>
+                        </div>
+                        <div class="about-text">
+                            <h3>👋 Hola! Soy Matías</h3>
+                            <p>Me apasiona desentrañar problemas complejos tanto a nivel de código como en la seguridad de los servidores. La tecnología está para facilitarnos la vida, y mi meta es crear soluciones eficientes, robustas y, sobre todo, dejando una sonrisa en el equipo.</p>
+                            <p>¿Tienes un proyecto atascado, una idea por desarrollar, o un servidor que necesita mantenimiento profundo?</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-container glass-card">
+                    <h3>Inicia un Ping</h3>
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Nombre / Entidad</label>
+                            <input type="text" id="name" name="name" placeholder="Ej: John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Canal de Contacto (Email)</label>
+                            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Paquete de Datos (Mensaje)</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Hablemos de código, servidores, o por qué Vim es mejor..." required></textarea>
+                        </div>
+                        <!-- Opciones de FormSubmit -->
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_subject" value="Nuevo Mensaje del Portafolio">
+                        <input type="hidden" name="_template" value="box">
+                        
+                        <button type="submit" class="btn btn-primary w-full">
+                            Enviar Transmisión <i data-lucide="send" class="icon-small"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Interactive Terminal Footer -->
+    <footer class="terminal-footer reveal" id="footer">
+        <div class="container">
+            <div class="terminal-window glass-card outline-terminal">
+                <div class="terminal-header">
+                    <div class="dots">
+                        <span class="red-dot"></span><span class="yellow-dot"></span><span class="green-dot"></span>
+                    </div>
+                    <span class="terminal-title font-mono text-sm text-gray">mtys24-bash -- 80x24</span>
+                </div>
+                <div class="terminal-content font-mono text-sm text-light" id="terminal-content">
+                    <p>Bienvenido al portafolio de Matías. Escribe <span class="text-emerald font-bold">help</span> para comandos disponibles.</p>
+                </div>
+                <div class="terminal-input-line font-mono text-sm">
+                    <span class="prompt text-emerald">guest@mtys24:~$</span>
+                    <input type="text" id="terminal-input" autocomplete="off" spellcheck="false" autofocus>
+                </div>
+            </div>
+            <div class="footer-copyright text-center text-sm font-mono mt-4 text-gray">
+                <p>&copy; 2026 Matías (Mtys24). Designed with precision & Passion.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Init Lucide Icons -->
+    <script>
+      lucide.createIcons();
+    </script>
+    <script src="./js/app.js"></script>
+</body>
+</html>
