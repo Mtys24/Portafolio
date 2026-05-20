@@ -3,76 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Matías (Mtys24): desarrollo full-stack, SysAdmin y proyectos en Django, React, Python y cloud. Portafolio y contacto.">
+    <meta name="theme-color" content="#06080f">
+    <meta property="og:title" content="Matías (Mtys24) | Full-Stack Dev & SysAdmin">
+    <meta property="og:description" content="Desarrollo web, sistemas y operaciones. Proyectos y contacto.">
+    <meta property="og:type" content="website">
     <title>Matías (Mtys24) | Full-Stack Dev & SysAdmin</title>
-    <!-- Fonts: Inter for UI, Fira Code for Terminal -->
+    <!-- Fonts: Space Grotesk (títulos), Inter (UI), Fira Code (terminal) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="./styles/main.css">
 </head>
 <body class="bg-dark text-light antialiased">
-    <!-- Blurry gradient background elements -->
-    <div class="glow-orb orb-1"></div>
-    <div class="glow-orb orb-2"></div>
+    <!-- FOUC Prevention Script -->
+    <script>
+        (function() {
+            const theme = localStorage.getItem('theme');
+            const a11y = localStorage.getItem('a11y-mode');
+            if (theme === 'light' || (!theme && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+                document.body.classList.add('light-theme');
+            }
+            if (a11y === 'true') {
+                document.body.classList.add('a11y-mode');
+            }
+        })();
+    </script>
+    
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="custom-cursor"></div>
 
-    <header class="navbar glass-nav">
+    <!-- Boot Sequence Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="terminal-loader">
+            <span class="prompt">Mtys24_OS@boot:~$</span> <span class="typing">./init_system.sh --verbose</span>
+            <div class="loader-logs" id="loader-logs"></div>
+        </div>
+    </div>
+    <a href="#hero" class="skip-link">Saltar al contenido</a>
+    <!-- Immersive Interactive Canvas Starfield -->
+    <canvas id="starfield-canvas"></canvas>
+    
+    <!-- HUD Decorations -->
+    <div class="hud-element hud-top-left">SYS_INIT_MTYS_24<div class="hud-line"></div></div>
+    <div class="hud-element hud-top-right">SECURE_LINK_ESTABLISHED<div class="hud-line"></div></div>
+    <div class="hud-element hud-bottom-left">GEO_SYNC_ACTIVE<div class="hud-line"></div></div>
+    <div class="hud-element hud-bottom-right">V_1.20_ONLINE<div class="hud-line"></div></div>
+    
+    <!-- Blurry gradient background elements -->
+    <div class="glow-orb orb-1" aria-hidden="true"></div>
+    <div class="glow-orb orb-2" aria-hidden="true"></div>
+    <!-- Nebula background layers from CSS -->
+    <div class="nebula-glow nebula-1" aria-hidden="true"></div>
+    <div class="nebula-glow nebula-2" aria-hidden="true"></div>
+    <div class="nebula-glow nebula-3" aria-hidden="true"></div>
+
+    <header class="navbar glass-nav" role="banner">
         <div class="container flex-between nav-content">
             <a href="#" class="logo">
                 <span class="text-emerald">Mtys24</span><span class="text-cyan">()</span>
             </a>
-            <nav class="nav-links">
-                <a href="#about">About</a>
-                <a href="#projects">Proyectos</a>
-                <a href="#skills">Skills</a>
-                <a href="#contact">Contacto</a>
+            <nav class="nav-links" id="primary-nav" aria-label="Principal">
+                <a href="#about" data-i18n="nav_about">Sobre mí</a>
+                <a href="#projects" data-i18n="nav_projects">Proyectos</a>
+                <a href="#more-projects" data-i18n="nav_ecosystem">Ecosistema</a>
+                <a href="#skills" data-i18n="nav_skills">Habilidades</a>
+                <a href="#contact" data-i18n="nav_contact">Contacto</a>
             </nav>
-            <button class="menu-toggle" aria-label="Menu" id="mobile-menu-btn">
-                <i data-lucide="menu"></i>
+            <div class="nav-toggles">
+                <button type="button" class="lang-toggle hover-magnetic" id="lang-toggle" aria-label="Cambiar Idioma" title="ES/EN">
+                    <span class="lang-text">ES</span>
+                </button>
+                <button type="button" class="sound-toggle hover-magnetic" id="sound-toggle" aria-label="Alternar Sonido" title="Sonido UI">
+                    <i data-lucide="volume-2"></i>
+                </button>
+                <button type="button" class="theme-toggle hover-magnetic" id="theme-toggle" aria-label="Alternar modo claro/oscuro" title="Modo Claro/Oscuro">
+                    <i data-lucide="sun"></i>
+                </button>
+                <button type="button" class="a11y-toggle hover-magnetic" id="a11y-toggle" aria-label="Alternar alto contraste (Daltonismo)" title="Modo Alto Contraste">
+                    <i data-lucide="eye"></i>
+                </button>
+            </div>
+            <button type="button" class="menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="primary-nav" id="mobile-menu-btn">
+                <i data-lucide="menu" aria-hidden="true"></i>
             </button>
         </div>
     </header>
 
     <main>
         <!-- Home / Hero Section -->
-        <section id="hero" class="hero section-spacing reveal">
+        <section id="hero" class="hero section-spacing reveal-up">
             <div class="container hero-content">
                 <div class="terminal-badge">
                     <span class="prompt">root@mtys24:~$</span> <span class="typing-text">./deploy_skills.sh</span>
                 </div>
                 <h1 class="hero-title">
-                    Build. Scale. <span class="text-gradient">Secure.</span>
+                    <span data-i18n="hero_title_1">Construir. Escalar.</span> <span class="text-gradient glitch-text" data-text="Proteger." data-i18n="hero_title_2">Proteger.</span>
                 </h1>
-                <h2 class="hero-subtitle">Full-Stack Dev & SysAdmin</h2>
-                <p class="hero-desc">Junior coder on a mission to write clean code and spread smiles 😄</p>
+                <h2 class="hero-subtitle" data-i18n="hero_subtitle">Full-stack &amp; SysAdmin</h2>
+                <p class="hero-desc" data-i18n="hero_desc">Desarrollador junior con ganas de escribir código claro y dejar al equipo con una sonrisa.</p>
                 <div class="hero-actions">
-                    <a href="#projects" class="btn btn-primary">Ver Proyectos <i data-lucide="arrow-right"></i></a>
-                    <a href="#contact" class="btn btn-secondary glass-btn">Contactar</a>
+                    <a href="#projects" class="btn btn-primary"><span data-i18n="hero_btn_projects">Ver proyectos</span> <i data-lucide="arrow-right" aria-hidden="true"></i></a>
+                    <a href="#contact" class="btn btn-secondary glass-btn" data-i18n="hero_btn_contact">Contactar</a>
                 </div>
+            </div>
+            <div class="scroll-indicator" aria-hidden="true">
+                <span>Scroll</span>
+                <i data-lucide="chevron-down"></i>
             </div>
         </section>
 
         <!-- Projects Bento Grid -->
-        <section id="projects" class="projects section-spacing reveal">
+        <section id="projects" class="projects section-spacing reveal-up">
             <div class="container">
                 <div class="section-header">
-                    <h2><span class="text-cyan">01.</span> Mis Proyectos</h2>
+                    <h2><span class="text-cyan">01.</span> <span data-i18n="section_projects">Mis Proyectos</span></h2>
                     <div class="line-decorator"></div>
                 </div>
                 
                 <div class="bento-grid">
-                    <!-- Project 1: Big/Main -->
+                    <!-- Project 1: Big/Main (Room Reservation System) -->
                     <article class="bento-item glass-card card-large">
                         <div class="card-content">
                             <div class="card-header">
                                 <i data-lucide="monitor" class="icon-accent text-cyan"></i>
                                 <div class="links">
-                                    <a href="#" aria-label="GitHub"><i data-lucide="github"></i></a>
-                                    <a href="#" aria-label="Live Demo"><i data-lucide="external-link"></i></a>
+                                    <a href="https://github.com/Mtys24/room-reservation-system" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i data-lucide="github"></i></a>
                                 </div>
                             </div>
-                            <h3>Room Reservation System</h3>
-                            <p>Plataforma robusta para la gestión y reserva de espacios, con análisis de datos y métricas (KPIs) en tiempo real para optimización de recursos.</p>
+                            <h3 data-i18n="p1_title">Room Reservation System</h3>
+                            <p data-i18n="p1_desc">Plataforma robusta para la gestión y reserva de espacios, con análisis de datos y métricas (KPIs) en tiempo real para la optimización de recursos empresariales.</p>
+                            
+                            <!-- KPI Indicator widget -->
+                            <div class="kpi-widget">
+                                <div class="kpi-item">
+                                    <span class="kpi-num text-cyan">99.8%</span>
+                                    <span class="kpi-label">Uptime</span>
+                                </div>
+                                <div class="kpi-item">
+                                    <span class="kpi-num text-emerald">1.1s</span>
+                                    <span class="kpi-label">Respuesta</span>
+                                </div>
+                            </div>
+
                             <ul class="tech-stack">
                                 <li>Django</li>
                                 <li>MySQL</li>
@@ -81,52 +155,112 @@
                         </div>
                     </article>
 
-                    <!-- Project 2: Tech/Networking -->
+                    <!-- Project 2: Interactive To-Do Card -->
                     <article class="bento-item glass-card outline-terminal">
                         <div class="card-content">
                             <div class="card-header">
-                                <i data-lucide="wifi" class="icon-accent text-emerald"></i>
-                                <div class="links"><a href="#"><i data-lucide="github"></i></a></div>
+                                <i data-lucide="check-square" class="icon-accent text-emerald"></i>
+                                <div class="links">
+                                    <a href="https://github.com/Mtys24/To_Do" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i data-lucide="github"></i></a>
+                                </div>
                             </div>
-                            <h3>Escáner de Red</h3>
-                            <p>Herramienta Python para análisis de topologías de red, detección de puertos abiertos y vulnerabilidades de manera silenciosa.</p>
+                            <h3 data-i18n="p2_title">To-Do Sci-Fi Interactive</h3>
+                            <p data-i18n="p2_desc">Aplicación de tareas interactiva con almacenamiento local. ¡Pruébala agregando y completando tareas en vivo aquí abajo!</p>
+                            
+                            <!-- Interactive To-Do Widget -->
+                            <div class="mini-todo-container">
+                                <div class="todo-input-row">
+                                    <input type="text" id="mini-todo-input" placeholder="Nueva tarea orbital..." aria-label="Nueva tarea" data-i18n="p2_ph">
+                                    <button type="button" id="mini-todo-add" class="todo-btn"><i data-lucide="plus"></i></button>
+                                </div>
+                                <ul id="mini-todo-list" class="mini-todo-list">
+                                    <li class="completed"><span data-i18n="p2_task1">Refactorizar middleware</span><button class="delete-btn" aria-label="Eliminar"><i data-lucide="trash-2"></i></button></li>
+                                    <li><span data-i18n="p2_task2">Configurar RAID 1 en DL380e</span><button class="delete-btn" aria-label="Eliminar"><i data-lucide="trash-2"></i></button></li>
+                                </ul>
+                            </div>
+
                             <ul class="tech-stack terminal-stack">
+                                <li>JavaScript</li>
+                                <li>Local Storage</li>
+                                <li>DOM Dynamics</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- Project 3: Interactive Bot Chat Card -->
+                    <article class="bento-item glass-card">
+                        <div class="card-content">
+                            <div class="card-header">
+                                <i data-lucide="bot" class="icon-accent text-cyan"></i>
+                                <div class="links">
+                                    <a href="https://github.com/Mtys24/Bot_basico1" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i data-lucide="github"></i></a>
+                                </div>
+                            </div>
+                            <h3 data-i18n="p3_title">Bot Básico Python (Sim)</h3>
+                            <p data-i18n="p3_desc">Simulador interactivo del bot en Python. Haz clic en las opciones rápidas o escríbele un comando para chatear con él.</p>
+                            
+                            <!-- Interactive Chat Bot Widget -->
+                            <div class="mini-bot-container">
+                                <div class="mini-bot-messages" id="mini-bot-chat">
+                                    <div class="bot-msg system" data-i18n="p3_bot1">> Bot básico python iniciado.</div>
+                                    <div class="bot-msg incoming" data-i18n="p3_bot2">¡Hola! Escribe algo o selecciona una opción.</div>
+                                </div>
+                                <div class="mini-bot-quick-replies">
+                                    <button type="button" class="reply-pill" data-reply="ping">ping</button>
+                                    <button type="button" class="reply-pill" data-reply="skills">skills</button>
+                                    <button type="button" class="reply-pill" data-reply="chiste">chiste</button>
+                                </div>
+                                <div class="mini-bot-input-row">
+                                    <input type="text" id="mini-bot-input" placeholder="Escribe..." aria-label="Escribe al bot" data-i18n="p3_ph">
+                                    <button type="button" id="mini-bot-send"><i data-lucide="send"></i></button>
+                                </div>
+                            </div>
+
+                            <ul class="tech-stack">
                                 <li>Python</li>
-                                <li>Networking</li>
-                                <li>Sockets</li>
+                                <li>Bot Logic</li>
+                                <li>Regex Match</li>
                             </ul>
                         </div>
                     </article>
 
-                    <!-- Project 3: Private/Security -->
+                    <!-- Project 4: GitHub Stats Dashboard Card -->
                     <article class="bento-item glass-card">
                         <div class="card-content">
                             <div class="card-header">
-                                <i data-lucide="shield-check" class="icon-accent text-cyan"></i>
+                                <i data-lucide="github" class="icon-accent text-emerald"></i>
+                                <div class="links">
+                                    <a href="https://github.com/Mtys24" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i data-lucide="external-link"></i></a>
+                                </div>
                             </div>
-                            <h3>Sistema de Pago de Permisos</h3>
-                            <p>Aplicación crítica focalizada en la lógica de seguridad estricta y validación de permisos a nivel empresarial del lado del servidor.</p>
-                            <ul class="tech-stack">
-                                <li>PHP</li>
-                                <li>Auth Flow</li>
-                                <li>Security</li>
-                            </ul>
-                        </div>
-                    </article>
+                            <h3 data-i18n="p4_title">Mtys24 Hub Dashboard</h3>
+                            <p data-i18n="p4_desc">Consola central del desarrollador. Resumen del ecosistema y estado de operaciones en tiempo real.</p>
+                            
+                            <!-- GitHub Stats Widget -->
+                            <div class="github-stats-widget">
+                                <div class="stats-row">
+                                    <span class="stat-name">Repositories</span>
+                                    <span class="stat-value font-mono text-emerald">15</span>
+                                </div>
+                                <div class="stats-row">
+                                    <span class="stat-name">GitHub Status</span>
+                                    <span class="stat-value font-mono text-cyan">🎯 Focusing</span>
+                                </div>
+                                <div class="stats-row">
+                                    <span class="stat-name">Code Smiles</span>
+                                    <span class="stat-value font-mono text-gradient font-bold">120%+</span>
+                                </div>
+                                <div class="stats-footer">
+                                    <a href="https://github.com/Mtys24" target="_blank" rel="noopener noreferrer" class="btn btn-secondary glass-btn w-full">
+                                        <span data-i18n="p4_btn">Explorar Perfil</span> <i data-lucide="arrow-up-right"></i>
+                                    </a>
+                                </div>
+                            </div>
 
-                    <!-- Project 4: Modern Web App -->
-                    <article class="bento-item glass-card">
-                        <div class="card-content">
-                            <div class="card-header">
-                                <i data-lucide="layers" class="icon-accent text-emerald"></i>
-                                <div class="links"><a href="#"><i data-lucide="external-link"></i></a></div>
-                            </div>
-                            <h3>Gestión Santa Cruz</h3>
-                            <p>Dashboard municipal moderno y responsivo alimentado por datos asíncronos y componentes interactivos.</p>
                             <ul class="tech-stack">
-                                <li>React</li>
-                                <li>Vite</li>
-                                <li>CSS3</li>
+                                <li>Profile Stats</li>
+                                <li>Git Ops</li>
+                                <li>Engagement</li>
                             </ul>
                         </div>
                     </article>
@@ -135,11 +269,209 @@
             </div>
         </section>
 
-        <!-- Skills Section -->
-        <section id="skills" class="skills section-spacing reveal">
+        <!-- Ecosystem / Additional Projects Section -->
+        <section id="more-projects" class="more-projects section-spacing reveal-up">
             <div class="container">
                 <div class="section-header">
-                    <h2><span class="text-emerald">02.</span> Arsenal Técnico</h2>
+                    <h2><span class="text-cyan">02.</span> <span data-i18n="section_ecosystem">Ecosistema de Software</span></h2>
+                    <div class="line-decorator"></div>
+                    <p class="section-desc mt-2" style="color: var(--text-secondary); max-width: 700px;" data-i18n="eco_desc">Explora mis repositorios open source recientes e integraciones de software enterprise desarrolladas para el sector público y privado.</p>
+                </div>
+
+                <!-- Filter Tab Bar -->
+                <div class="filter-bar" style="margin-bottom: 2rem;">
+                    <button type="button" class="filter-btn active" data-filter="all">Todos</button>
+                    <button type="button" class="filter-btn" data-filter="open-source">Open Source</button>
+                    <button type="button" class="filter-btn" data-filter="enterprise">Enterprise / Privado</button>
+                </div>
+
+                <!-- Additional Projects Grid -->
+                <div class="projects-grid" id="additional-projects-grid">
+                    <!-- Project 1: Módulo FirmaGob Chile (Enterprise) -->
+                    <article class="project-card interactive-card glass-card show" tabindex="0" role="button" aria-haspopup="dialog" data-category="enterprise">
+                        <div class="card-inner">
+                            <div class="card-accent-bar"></div>
+                            <div class="project-header">
+                                <div class="project-icon"><i data-lucide="shield-check" class="text-violet"></i></div>
+                                <span class="badge badge-enterprise font-mono">Privado / Enterprise</span>
+                            </div>
+                            <h3 data-i18n="eco1_title">Módulo de Firma y Validación Electrónica</h3>
+                            <p data-i18n="eco1_desc">Módulo legal-tech para integración con APIs gubernamentales centralizadas. Permite la validación y firma electrónica avanzada de archivos PDF/XML mediante JSON Web Tokens (JWT HS256) y autenticación multifactor (MFA OTP), incrustando estampados dinámicos firmados.</p>
+                            <ul class="tech-tags">
+                                <li>TypeScript</li>
+                                <li>Node.js</li>
+                                <li>JWT (HS256)</li>
+                                <li>OTP MFA</li>
+                                <li>AgileSigner</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- Project 2: Portal Digital de Patentes (Enterprise) -->
+                    <article class="project-card interactive-card glass-card show" tabindex="0" role="button" aria-haspopup="dialog" data-category="enterprise">
+                        <div class="card-inner">
+                            <div class="card-accent-bar"></div>
+                            <div class="project-header">
+                                <div class="project-icon"><i data-lucide="landmark" class="text-violet"></i></div>
+                                <span class="badge badge-enterprise font-mono">Privado / Enterprise</span>
+                            </div>
+                            <h3 data-i18n="eco2_title">Portal Transaccional Corporativo</h3>
+                            <p data-i18n="eco2_desc">Portal transaccional híbrido para la gestión digital de trámites y solicitudes en una entidad pública. Arquitectura robusta con bases de datos híbridas (MySQL y MongoDB) para gestionar perfiles, catálogos, registros dinámicos y logs de auditoría en runtime.</p>
+                            <ul class="tech-tags">
+                                <li>Django 5.2</li>
+                                <li>MySQL</li>
+                                <li>MongoDB</li>
+                                <li>Docker</li>
+                                <li>Roles Engine</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- Project 3: Escáner de Red (Open Source) -->
+                    <article class="project-card interactive-card glass-card show" tabindex="0" role="button" aria-haspopup="dialog" data-category="open-source">
+                        <div class="card-inner">
+                            <div class="card-accent-bar"></div>
+                            <div class="project-header">
+                                <div class="project-icon"><i data-lucide="activity" class="text-cyan"></i></div>
+                                <div class="project-links">
+                                    <a href="https://github.com/Mtys24/Esc-ner-de-red" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i data-lucide="github"></i></a>
+                                </div>
+                            </div>
+                            <h3 data-i18n="eco3_title">Escáner de Red</h3>
+                            <p data-i18n="eco3_desc">Herramienta SysAdmin orientada al diagnóstico y auditoría de redes locales. Permite realizar escaneos ágiles de puertos TCP abiertos, detección activa de hosts conectados mediante sockets en subredes locales y medición de latencias.</p>
+                            <ul class="tech-tags">
+                                <li>Python</li>
+                                <li>Bash</li>
+                                <li>Sockets</li>
+                                <li>Network Admin</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- Project 4: SOS Ayuda (Open Source) -->
+                    <article class="project-card interactive-card glass-card show" tabindex="0" role="button" aria-haspopup="dialog" data-category="open-source">
+                        <div class="card-inner">
+                            <div class="card-accent-bar"></div>
+                            <div class="project-header">
+                                <div class="project-icon"><i data-lucide="heart-pulse" class="text-cyan"></i></div>
+                                <div class="project-links">
+                                    <a href="https://github.com/Mtys24/Sos_Ayuda" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i data-lucide="github"></i></a>
+                                </div>
+                            </div>
+                            <h3 data-i18n="eco4_title">SOS Ayuda Cyber-Medical HUD</h3>
+                            <p data-i18n="eco4_desc">Cyber-Medical HUD de primeros auxilios diseñado para la atención e instrucción en situaciones críticas. Cuenta con una ficha médica ICE de emergencia, guías de maniobras críticas de reanimación y geolocalización.</p>
+                            <ul class="tech-tags">
+                                <li>JavaScript</li>
+                                <li>CSS Variables</li>
+                                <li>Responsive UI</li>
+                                <li>Emergency HUD</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- Project 5: Censurador de PDF (Open Source) -->
+                    <article class="project-card interactive-card glass-card show" tabindex="0" role="button" aria-haspopup="dialog" data-category="open-source">
+                        <div class="card-inner">
+                            <div class="card-accent-bar"></div>
+                            <div class="project-header">
+                                <div class="project-icon"><i data-lucide="eye-off" class="text-cyan"></i></div>
+                                <div class="project-links">
+                                    <a href="https://github.com/Mtys24/Censurador-de-PDF" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i data-lucide="github"></i></a>
+                                </div>
+                            </div>
+                            <h3 data-i18n="eco5_title">Censurador de PDF</h3>
+                            <p data-i18n="eco5_desc">Script utilitario en Python para la censura y redacción de datos sensibles dentro de archivos PDF. Detecta automáticamente palabras clave y patrones para sobreescribir con marcas de confidencialidad antes de su publicación.</p>
+                            <ul class="tech-tags">
+                                <li>Python</li>
+                                <li>PDF Mining</li>
+                                <li>Regex</li>
+                                <li>Data Privacy</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- Project 6: Portal de Atención Ciudadana (Enterprise) -->
+                    <article class="project-card interactive-card glass-card show" tabindex="0" role="button" aria-haspopup="dialog" data-category="enterprise">
+                        <div class="card-inner">
+                            <div class="card-accent-bar"></div>
+                            <div class="project-header">
+                                <div class="project-icon"><i data-lucide="users" class="text-violet"></i></div>
+                                <span class="badge badge-enterprise font-mono">Privado / Enterprise</span>
+                            </div>
+                            <h3 data-i18n="eco6_title">Plataforma de Atención al Usuario</h3>
+                            <p data-i18n="eco6_desc">Sistema corporativo desarrollado para canalizar de forma digital consultas, reclamos y solicitudes de usuarios. Integra un sistema automatizado de enrutamiento de tickets de soporte hacia los departamentos correspondientes de la entidad.</p>
+                            <ul class="tech-tags">
+                                <li>React</li>
+                                <li>Node.js</li>
+                                <li>Express</li>
+                                <li>REST APIs</li>
+                                <li>PostgreSQL</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- Project 7: Transparencia y Auditoría Municipal (Enterprise) -->
+                    <article class="project-card interactive-card glass-card show" tabindex="0" role="button" aria-haspopup="dialog" data-category="enterprise">
+                        <div class="card-inner">
+                            <div class="card-accent-bar"></div>
+                            <div class="project-header">
+                                <div class="project-icon"><i data-lucide="check-square" class="text-violet"></i></div>
+                                <span class="badge badge-enterprise font-mono">Privado / Enterprise</span>
+                            </div>
+                            <h3 data-i18n="eco7_title">Sistema de Transparencia y Auditoría</h3>
+                            <p data-i18n="eco7_desc">Módulo de cumplimiento normativo y transparencia para entidades corporativas/públicas. Facilita el registro y auditoría auditable de resoluciones legales, bitácoras de modificaciones de datos y resguardo de la fe pública administrativa.</p>
+                            <ul class="tech-tags">
+                                <li>PHP / Laravel</li>
+                                <li>PostgreSQL</li>
+                                <li>Audit Trail</li>
+                                <li>Transparency Law</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- Project 8: Biblioteca Pública (Open Source) -->
+                    <article class="project-card interactive-card glass-card show" tabindex="0" role="button" aria-haspopup="dialog" data-category="open-source">
+                        <div class="card-inner">
+                            <div class="card-accent-bar"></div>
+                            <div class="project-header">
+                                <div class="project-icon"><i data-lucide="book-open" class="text-cyan"></i></div>
+                                <div class="project-links">
+                                    <a href="https://github.com/Mtys24/Biblioteca_publica" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i data-lucide="github"></i></a>
+                                </div>
+                            </div>
+                            <h3 data-i18n="eco8_title">Biblioteca Pública Virtual</h3>
+                            <p data-i18n="eco8_desc">Sistema modular para la administración y control de inventario, préstamo de libros, registro de socios y control de stock en catálogos virtuales.</p>
+                            <ul class="tech-tags">
+                                <li>PHP</li>
+                                <li>JavaScript</li>
+                                <li>SQL</li>
+                                <li>Admin Panel</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- GitHub Live Feed Section -->
+        <section id="github-section" class="github-feed section-spacing reveal-up">
+            <div class="container">
+                <div class="section-header">
+                    <h2><span class="text-emerald">Live.</span> <span data-i18n="github_title">Actividad en GitHub</span></h2>
+                    <div class="line-decorator"></div>
+                </div>
+                <div id="github-repos" class="github-grid">
+                    <!-- Repos injected here via JS -->
+                    <div class="github-loader" data-i18n="github_loading">Conectando a la API de GitHub...</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills section-spacing reveal-up">
+            <div class="container">
+                <div class="section-header">
+                    <h2><span class="text-emerald">03.</span> <span data-i18n="section_skills">Arsenal Técnico</span></h2>
                     <div class="line-decorator"></div>
                 </div>
 
@@ -198,45 +530,43 @@
         </section>
 
         <!-- About & Contact Section -->
-        <section id="contact" class="contact section-spacing reveal">
+        <section id="contact" class="contact section-spacing reveal-up">
             <div class="container contact-container">
                 <div class="about-card glass-card">
                     <div class="about-flex" id="about">
-                        <div class="gif-container">
-                            <div class="gif-placeholder">
-                                <span class="gif-text">c:</span>
+                        <div class="avatar-ring">
+                            <div class="avatar-inner">
+                                <img src="https://avatars.githubusercontent.com/u/167946560?v=4" alt="Matías Francisco Manríquez Manríquez" width="120" height="120" style="width: 100%; height: 100%; object-fit: cover;">
                             </div>
                         </div>
                         <div class="about-text">
-                            <h3>👋 Hola! Soy Matías</h3>
-                            <p>Me apasiona desentrañar problemas complejos tanto a nivel de código como en la seguridad de los servidores. La tecnología está para facilitarnos la vida, y mi meta es crear soluciones eficientes, robustas y, sobre todo, dejando una sonrisa en el equipo.</p>
-                            <p>¿Tienes un proyecto atascado, una idea por desarrollar, o un servidor que necesita mantenimiento profundo?</p>
+                            <h3 data-i18n="about_title">👋 ¡Hola! Soy Matías Francisco Manríquez</h3>
+                            <p data-i18n="about_p1">Desarrollador junior apasionado por desentrañar problemas complejos tanto a nivel de código frontend/backend como en la optimización y seguridad de servidores. Escribo código claro, robusto y eficiente para crear soluciones digitales que dejen una sonrisa en el equipo.</p>
+                            <p data-i18n="about_p2">¿Tienes un reto técnico, una idea innovadora o un servidor que necesita mantenimiento profundo? ¡Inicia un ping y hablemos de tecnología!</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="contact-form-container glass-card">
-                    <h3>Inicia un Ping</h3>
+                    <h3 data-i18n="contact_title">Inicia un Ping</h3>
                     <form id="contactForm" class="contact-form">
                         <div class="form-group">
-                            <label for="name">Nombre / Entidad</label>
+                            <label for="name" data-i18n="contact_name">Nombre / Entidad</label>
                             <input type="text" id="name" name="name" placeholder="Ej: John Doe" required>
                         </div>
                         <div class="form-group">
-                            <label for="email">Canal de Contacto (Email)</label>
+                            <label for="email" data-i18n="contact_email">Canal de Contacto (Email)</label>
                             <input type="email" id="email" name="email" placeholder="john@example.com" required>
                         </div>
                         <div class="form-group">
-                            <label for="message">Paquete de Datos (Mensaje)</label>
-                            <textarea id="message" name="message" rows="4" placeholder="Hablemos de código, servidores, o por qué Vim es mejor..." required></textarea>
+                            <label for="message" data-i18n="contact_message">Paquete de Datos (Mensaje)</label>
+                            <textarea id="message" name="message" rows="4" placeholder="..." required></textarea>
                         </div>
-                        <!-- Opciones de FormSubmit -->
                         <input type="hidden" name="_captcha" value="false">
                         <input type="hidden" name="_subject" value="Nuevo Mensaje del Portafolio">
                         <input type="hidden" name="_template" value="box">
-                        
                         <button type="submit" class="btn btn-primary w-full">
-                            Enviar Transmisión <i data-lucide="send" class="icon-small"></i>
+                            <span data-i18n="contact_send">Enviar Transmisión</span> <i data-lucide="send" class="icon-small"></i>
                         </button>
                     </form>
                 </div>
@@ -245,7 +575,7 @@
     </main>
 
     <!-- Interactive Terminal Footer -->
-    <footer class="terminal-footer reveal" id="footer">
+    <footer class="terminal-footer reveal-up" id="footer">
         <div class="container">
             <div class="terminal-window glass-card outline-terminal">
                 <div class="terminal-header">
@@ -255,11 +585,11 @@
                     <span class="terminal-title font-mono text-sm text-gray">mtys24-bash -- 80x24</span>
                 </div>
                 <div class="terminal-content font-mono text-sm text-light" id="terminal-content">
-                    <p>Bienvenido al portafolio de Matías. Escribe <span class="text-emerald font-bold">help</span> para comandos disponibles.</p>
+                    <p data-i18n="footer_term">Bienvenido al portafolio de Matías. Escribe <span class="text-emerald font-bold">help</span> para comandos disponibles.</p>
                 </div>
                 <div class="terminal-input-line font-mono text-sm">
                     <span class="prompt text-emerald">guest@mtys24:~$</span>
-                    <input type="text" id="terminal-input" autocomplete="off" spellcheck="false" autofocus>
+                    <input type="text" id="terminal-input" autocomplete="off" spellcheck="false" aria-label="Comandos de la terminal">
                 </div>
             </div>
             <div class="footer-copyright text-center text-sm font-mono mt-4 text-gray">
@@ -272,6 +602,20 @@
     <script>
       lucide.createIcons();
     </script>
+    <!-- Global Project Modal -->
+    <dialog id="project-modal" class="project-modal" aria-labelledby="modal-title" aria-describedby="modal-desc">
+        <div class="modal-inner">
+            <button class="close-modal" aria-label="Cerrar detalles"><i data-lucide="x"></i></button>
+            <div class="modal-header">
+                <div class="modal-icon" id="modal-icon-container"></div>
+                <h3 id="modal-title">Título del Proyecto</h3>
+            </div>
+            <div id="modal-desc" class="modal-body"></div>
+            <div class="modal-tags" id="modal-tags"></div>
+            <div class="modal-footer" id="modal-actions"></div>
+        </div>
+    </dialog>
+
     <script src="./js/app.js"></script>
 </body>
 </html>
