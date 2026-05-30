@@ -745,6 +745,69 @@ Hardware (HP RAID)<span class="text-emerald">[===================] 95%</span><br
     }
 
     // 9.2 Global Modal Logic
+    const projectsData = {
+        eco1: {
+            es: { title: 'Módulo de Firma y Validación Electrónica', desc: 'Módulo legal-tech desarrollado en la Municipalidad de Santa Cruz para integración con APIs gubernamentales centralizadas. Permite la validación y firma electrónica avanzada de archivos PDF/XML mediante JSON Web Tokens (JWT HS256) y autenticación multifactor por OTP, incrustando estampados dinámicos firmados digitalmente. Cumple con los estándares de la plataforma AgileSigner y los requisitos de la administración pública chilena.' },
+            en: { title: 'Electronic Signature & Validation Module', desc: 'Legal-tech module developed at Santa Cruz Municipality for integration with centralized government APIs. Enables advanced electronic validation and signing of PDF/XML files using JWT (HS256) and OTP multi-factor authentication, embedding dynamically signed digital stamps. Compliant with AgileSigner platform standards and Chilean public administration requirements.' },
+            highlights: ['JWT HS256 authentication', 'OTP MFA 2-factor auth', 'AgileSigner integration', 'PDF/XML digital signing', 'Government API integration'],
+            github: null, category: 'enterprise'
+        },
+        eco2: {
+            es: { title: 'Portal Transaccional Corporativo', desc: 'Portal transaccional híbrido para la gestión digital de trámites y solicitudes de la Municipalidad de Santa Cruz. Arquitectura robusta con Django 5.2 y bases de datos híbridas: MySQL para datos relacionales (usuarios, solicitudes, resoluciones) y MongoDB para registros dinámicos y logs de auditoría en runtime. Incluye motor de roles y permisos, catálogo de servicios y módulo de seguimiento de estados.' },
+            en: { title: 'Corporate Transactional Portal', desc: 'Hybrid transactional portal for digital management of procedures and requests at Santa Cruz Municipality. Robust architecture using Django 5.2 with hybrid databases: MySQL for relational data (users, requests, resolutions) and MongoDB for dynamic records and runtime audit logs. Includes role/permission engine, service catalog, and status tracking module.' },
+            highlights: ['Django 5.2 + hybrid DB', 'MySQL + MongoDB architecture', 'Role-based access control', 'Docker containerized', 'Real-time audit logs'],
+            github: null, category: 'enterprise'
+        },
+        eco3: {
+            es: { title: 'Escáner de Red', desc: 'Herramienta SysAdmin en Python y Bash orientada al diagnóstico y auditoría de redes locales. Realiza escaneos ágiles de puertos TCP abiertos mediante sockets raw, detección activa de hosts en subredes configurables, medición de latencias RTT y generación de reportes. Desarrollada para uso en infraestructuras reales de producción.' },
+            en: { title: 'Network Scanner', desc: 'Python and Bash SysAdmin tool for local network diagnostics and auditing. Performs fast TCP open port scans via raw sockets, active host detection in configurable subnets, RTT latency measurement, and report generation. Built for use in real production infrastructure environments.' },
+            highlights: ['TCP port scanning', 'Active host discovery', 'RTT latency measurement', 'Configurable subnets', 'Report generation'],
+            github: 'https://github.com/Mtys24/Esc-ner-de-red', category: 'open-source'
+        },
+        eco4: {
+            es: { title: 'SOS Ayuda Cyber-Medical HUD', desc: 'Cyber-Medical HUD de primeros auxilios para instrucción en situaciones críticas. Incluye ficha médica ICE (In Case of Emergency) editable, guías paso a paso de maniobras de RCP y Heimlich, geolocalización de servicios de emergencia cercanos y soporte offline mediante Service Worker. Interfaz optimizada para uso bajo estrés y condiciones adversas.' },
+            en: { title: 'SOS Help Cyber-Medical HUD', desc: 'First-aid Cyber-Medical HUD for critical situation instruction. Features an editable ICE (In Case of Emergency) medical profile, step-by-step CPR and Heimlich maneuver guides, geolocation of nearby emergency services, and offline support via Service Worker. Interface optimized for use under stress and adverse conditions.' },
+            highlights: ['ICE emergency profile', 'CPR & Heimlich guides', 'Geolocation integration', 'Offline / Service Worker', 'Stress-optimized UI'],
+            github: 'https://github.com/Mtys24/Sos_Ayuda', category: 'open-source'
+        },
+        eco5: {
+            es: { title: 'Censurador de PDF', desc: 'Script utilitario en Python para la censura automática de datos sensibles en archivos PDF. Detecta y redacta palabras clave, patrones de datos personales (RUT, emails, teléfonos) y expresiones regulares configurables, sobreescribiendo con marcas de confidencialidad. Soporta procesamiento en lote y es configurable para distintos esquemas de privacidad de datos.' },
+            en: { title: 'PDF Censor', desc: 'Python utility script for automatic censorship of sensitive data in PDF files. Detects and redacts keywords, personal data patterns (national IDs, emails, phones), and configurable regex, overwriting with confidentiality marks. Supports batch processing and is configurable for different data privacy schemes.' },
+            highlights: ['Regex pattern detection', 'Personal data masking', 'Batch PDF processing', 'Configurable redaction rules', 'Data privacy compliance'],
+            github: 'https://github.com/Mtys24/Censurador-de-PDF', category: 'open-source'
+        },
+        eco6: {
+            es: { title: 'Plataforma de Atención al Usuario', desc: 'Sistema corporativo para la canalización digital de consultas, reclamos y solicitudes de usuarios de la Municipalidad de Santa Cruz. Integra enrutamiento automático de tickets hacia los departamentos correspondientes, panel de administración con métricas, seguimiento de estados en tiempo real y sistema de notificaciones. Arquitectura React + Node.js + Express con PostgreSQL.' },
+            en: { title: 'User Support Platform', desc: 'Corporate system for digital routing of user queries, complaints, and requests at Santa Cruz Municipality. Features automated ticket routing to corresponding departments, admin panel with metrics, real-time status tracking, and notification system. React + Node.js + Express architecture with PostgreSQL.' },
+            highlights: ['Automated ticket routing', 'Multi-department support', 'Real-time status tracking', 'Admin dashboard & metrics', 'Notification system'],
+            github: null, category: 'enterprise'
+        },
+        eco7: {
+            es: { title: 'Sistema de Transparencia y Auditoría', desc: 'Módulo de cumplimiento normativo de transparencia activa y pasiva para la Municipalidad de Santa Cruz, conforme a la Ley 20.285 de Transparencia chilena. Gestiona el registro auditable de resoluciones legales, bitácoras de modificaciones, documentación pública y fe pública administrativa. Desarrollado en PHP/Laravel con PostgreSQL y trazabilidad completa de operaciones.' },
+            en: { title: 'Transparency & Audit System', desc: 'Active and passive transparency compliance module for Santa Cruz Municipality, adhering to Chilean Transparency Law 20.285. Manages auditable registration of legal resolutions, modification logs, public documentation, and administrative public records. Built with PHP/Laravel and PostgreSQL with full operation traceability.' },
+            highlights: ['Ley 20.285 compliance', 'Full audit trail', 'Active transparency module', 'Legal document management', 'PostgreSQL traceability'],
+            github: null, category: 'enterprise'
+        },
+        eco8: {
+            es: { title: 'Biblioteca Pública Virtual', desc: 'Sistema modular para la administración integral de una biblioteca pública. Gestiona inventario de libros, préstamos con plazos configurables, registro y autenticación de socios, control de stock y catálogo virtual con búsqueda. Incluye panel de administración con alertas de disponibilidad y reportes de actividad. Desarrollado en PHP con base de datos SQL.' },
+            en: { title: 'Virtual Public Library', desc: 'Modular system for comprehensive public library management. Handles book inventory, lending with configurable terms, member registration and authentication, stock control, and searchable virtual catalog. Includes admin panel with availability alerts and activity reports. Built with PHP and SQL database.' },
+            highlights: ['Inventory management', 'Member registration & auth', 'Lending & returns system', 'Searchable catalog', 'Admin panel & reports'],
+            github: 'https://github.com/Mtys24/Biblioteca_publica', category: 'open-source'
+        },
+        eco9: {
+            es: { title: 'Grúas Valdivia', desc: 'Sitio web corporativo para una empresa de grúas y servicios de remolque. Diseño profesional con catálogo de servicios, sección de contacto con formulario, galería de equipos y optimización SEO para búsquedas locales. Interfaz completamente responsive adaptada para consultas desde dispositivos móviles.' },
+            en: { title: 'Grúas Valdivia', desc: 'Corporate website for a towing and crane services company. Professional design with service catalog, contact form section, equipment gallery, and local SEO optimization. Fully responsive interface optimized for mobile device queries.' },
+            highlights: ['Catálogo de servicios', 'Formulario de contacto', 'Galería de equipos', 'SEO local optimizado', 'Diseño responsive'],
+            github: 'https://github.com/Mtys24/Gruas-Valdivia', category: 'open-source'
+        },
+        eco10: {
+            es: { title: 'Memento Studio', desc: 'Sitio web creativo para un estudio de fotografía y producción audiovisual. Cuenta con galería interactiva de trabajos, animaciones CSS fluidas, experiencia visual inmersiva y un diseño que refleja la identidad artística del estudio. Enfocado en mostrar el portfolio creativo de manera impactante.' },
+            en: { title: 'Memento Studio', desc: 'Creative website for a photography and audiovisual production studio. Features an interactive portfolio gallery, smooth CSS animations, immersive visual experience, and a design that reflects the studio\'s artistic identity. Focused on showcasing the creative portfolio in an impactful way.' },
+            highlights: ['Galería interactiva', 'CSS animations fluidas', 'Diseño identidad artística', 'Portfolio creativo', 'Experiencia inmersiva'],
+            github: 'https://github.com/Mtys24/Memento-Studio', category: 'open-source'
+        }
+    };
+
     const modal = document.getElementById('project-modal');
     if (modal) {
         const modalTitle = document.getElementById('modal-title');
@@ -755,28 +818,59 @@ Hardware (HP RAID)<span class="text-emerald">[===================] 95%</span><br
         const closeBtn = modal.querySelector('.close-modal');
 
         const interactiveCards = document.querySelectorAll('.interactive-card');
-        
-        const openModal = (card) => {
-            const h3 = card.querySelector('h3');
-            const p = card.querySelector('p');
-            const tags = card.querySelector('.tech-tags');
-            const icon = card.querySelector('.project-icon');
-            
-            modalTitle.innerText = h3 ? h3.innerText : 'Proyecto';
-            modalDesc.innerText = p ? p.innerText : '';
-            modalTags.innerHTML = tags ? tags.innerHTML : '';
-            modalIcon.innerHTML = icon ? icon.innerHTML : '';
 
-            modalActions.innerHTML = `<button class="btn btn-primary" onclick="document.getElementById('project-modal').close()">Cerrar Detalles</button>`;
-            
+        const openModal = (card) => {
+            const id = card.dataset.projectId;
+            const lang = localStorage.getItem('lang') || 'es';
+            const data = id && projectsData[id] ? projectsData[id] : null;
+            const h3 = card.querySelector('h3');
+            const icon = card.querySelector('.project-icon');
+            const tags = card.querySelector('.tech-tags');
+
+            modalIcon.innerHTML = icon ? icon.innerHTML : '';
+            modalTitle.innerText = data ? data[lang]?.title || data.es.title : (h3 ? h3.innerText : 'Proyecto');
+
+            if (data) {
+                const desc = data[lang]?.desc || data.es.desc;
+                const highlightsHTML = data.highlights.map(h =>
+                    `<li><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>${h}</li>`
+                ).join('');
+                modalDesc.innerHTML = `<p>${desc}</p><ul class="modal-highlights">${highlightsHTML}</ul>`;
+            } else {
+                const p = card.querySelector('p');
+                modalDesc.innerText = p ? p.innerText : '';
+            }
+
+            modalTags.innerHTML = tags ? tags.innerHTML : '';
+
+            const closeLabel = lang === 'en' ? 'Close' : 'Cerrar';
+            const githubLabel = lang === 'en' ? 'View on GitHub' : 'Ver en GitHub';
+            let actionsHTML = '';
+            if (data && data.github) {
+                actionsHTML += `<a href="${data.github}" target="_blank" rel="noopener noreferrer" class="btn btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg> ${githubLabel}</a>`;
+            }
+            actionsHTML += `<button class="btn btn-secondary glass-btn modal-close-btn" data-close-modal>${closeLabel}</button>`;
+            modalActions.innerHTML = actionsHTML;
+
+            document.body.classList.add('cursor-disabled');
+            modalActions.querySelector('[data-close-modal]')?.addEventListener('click', () => modal.close());
+            if (window.lucide) window.lucide.createIcons();
             modal.showModal();
         };
 
+        modal.addEventListener('close', () => {
+            document.body.classList.remove('cursor-disabled');
+        });
+
         interactiveCards.forEach(card => {
-            card.addEventListener('click', () => openModal(card));
+            card.addEventListener('click', (e) => {
+                if (e.target.closest('a') || card.classList.contains('hide')) return;
+                openModal(card);
+            });
             card.addEventListener('keydown', (e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault();
+                    if (card.classList.contains('hide')) return;
                     openModal(card);
                 }
             });
@@ -853,35 +947,43 @@ Hardware (HP RAID)<span class="text-emerald">[===================] 95%</span><br
         }
     }
 
-    // 10.2 Custom Magnetic Cursor
-    const cursor = document.getElementById('custom-cursor');
-    if (cursor && window.matchMedia('(pointer: fine)').matches) {
-        let mouseX = window.innerWidth / 2;
-        let mouseY = window.innerHeight / 2;
-        let cursorX = mouseX;
-        let cursorY = mouseY;
-        
+    // 10.2 Custom Cursor (dot + ring trailing)
+    const cursorDot = document.getElementById('cursor-dot');
+    const cursorRing = document.getElementById('cursor-ring');
+    if (cursorDot && cursorRing && window.matchMedia('(pointer: fine)').matches) {
+        let mx = 0, my = 0;
+        let rx = 0, ry = 0;
+
         window.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-        });
+            mx = e.clientX;
+            my = e.clientY;
+            cursorDot.style.left = `${mx}px`;
+            cursorDot.style.top = `${my}px`;
+        }, { passive: true });
 
-        const renderCursor = () => {
-            // Lerp for smooth following
-            cursorX += (mouseX - cursorX) * 0.2;
-            cursorY += (mouseY - cursorY) * 0.2;
-            cursor.style.left = `${cursorX}px`;
-            cursor.style.top = `${cursorY}px`;
-            requestAnimationFrame(renderCursor);
+        const trail = () => {
+            rx += (mx - rx) * 0.15;
+            ry += (my - ry) * 0.15;
+            cursorRing.style.left = `${rx}px`;
+            cursorRing.style.top = `${ry}px`;
+            requestAnimationFrame(trail);
         };
-        requestAnimationFrame(renderCursor);
+        requestAnimationFrame(trail);
 
-        // Magnetic hover effect
-        const hoverElements = document.querySelectorAll('a, button, .interactive-card, .hover-magnetic, .glass-card');
-        hoverElements.forEach(el => {
-            el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
-            el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
+        const hoverEls = 'a, button, .interactive-card, .glass-card, .project-card, .hover-magnetic';
+        const addHover = (el) => {
+            el.addEventListener('mouseenter', () => { cursorDot.classList.add('hovering'); cursorRing.classList.add('hovering'); });
+            el.addEventListener('mouseleave', () => { cursorDot.classList.remove('hovering'); cursorRing.classList.remove('hovering'); });
+        };
+        document.querySelectorAll(hoverEls).forEach(addHover);
+
+        const obs = new MutationObserver(() => {
+            document.querySelectorAll(`${hoverEls}:not([data-cw])`).forEach(el => {
+                el.setAttribute('data-cw', '1');
+                addHover(el);
+            });
         });
+        obs.observe(document.body, { childList: true, subtree: true });
     }
 
     // 10.3 UI Sound Design (AudioContext)
@@ -973,15 +1075,7 @@ Hardware (HP RAID)<span class="text-emerald">[===================] 95%</span><br
                         </div>
                     `;
                     githubGrid.appendChild(el);
-                    
-                    // Wire up new dynamic elements for custom cursor and sound
-                    el.addEventListener('mouseenter', () => {
-                        if(cursor) cursor.classList.add('hovering');
-                        playSound('hover');
-                    });
-                    el.addEventListener('mouseleave', () => {
-                        if(cursor) cursor.classList.remove('hovering');
-                    });
+                    el.addEventListener('mouseenter', () => playSound('hover'));
                     el.addEventListener('click', () => playSound('click'));
                 });
                 if (window.lucide) window.lucide.createIcons();
@@ -999,6 +1093,7 @@ Hardware (HP RAID)<span class="text-emerald">[===================] 95%</span><br
             nav_projects: "Proyectos",
             nav_ecosystem: "Ecosistema",
             nav_skills: "Habilidades",
+            nav_experience: "Trayectoria",
             nav_contact: "Contacto",
             github_title: "Actividad en GitHub",
             github_loading: "Conectando a la API de GitHub...",
@@ -1051,6 +1146,32 @@ Hardware (HP RAID)<span class="text-emerald">[===================] 95%</span><br
             eco7_desc: "Módulo de cumplimiento normativo y transparencia para entidades corporativas/públicas. Facilita el registro y auditoría auditable de resoluciones legales, bitácoras de modificaciones de datos y resguardo de la fe pública administrativa.",
             eco8_title: "Biblioteca Pública Virtual",
             eco8_desc: "Sistema modular para la administración y control de inventario, préstamo de libros, registro de socios y control de stock en catálogos virtuales.",
+            eco9_title: "Grúas Valdivia",
+            eco9_desc: "Sitio web corporativo para una empresa de grúas y servicios de remolque. Diseño profesional con catálogo de servicios, área de contacto y optimización SEO para búsquedas locales.",
+            eco10_title: "Memento Studio",
+            eco10_desc: "Sitio web creativo para un estudio de fotografía y producción audiovisual. Galería interactiva, animaciones CSS y experiencia visual inmersiva con enfoque en portfolio creativo.",
+            download_cv: "Descargar CV",
+            currently_title: "Actualmente",
+            currently_work_title: "Ingeniero TI",
+            currently_work_sub: "Municipalidad de Santa Cruz · Presencial",
+            currently_work_desc: "Desarrollando software, soporte técnico y automatización para la municipalidad. Implementando soluciones con Django, Node.js y bases de datos híbridas.",
+            currently_learn_title: "Aprendiendo",
+            currently_learn_desc: "Machine Learning & NLP en AWS (certificaciones en curso). Expandiendo mi stack con TypeScript, React avanzado y Docker en producción.",
+            currently_goal_title: "Buscando",
+            currently_goal_desc: "Nuevos desafíos como desarrollador full-stack o SysAdmin. Abierto a oportunidades presenciales en O'Higgins o remotas en todo Chile.",
+            section_experience: "Trayectoria",
+            exp_desc: "Mi recorrido profesional y académico en el mundo de la tecnología.",
+            exp_1: "Desarrollo de software, soporte técnico especializado, administración de servidores y automatización de procesos municipales.",
+            exp_2: "Desarrollo de sistemas web con Node.js y PHP para la gestión municipal. Colaboración en módulos de transparencia activa y pasiva.",
+            exp_3: "Mantenimiento de redes inalámbricas, instalación y configuración de cámaras IP, soporte técnico a usuarios.",
+            edu_1: "Formación integral en desarrollo de software, bases de datos, redes y gestión de proyectos tecnológicos.",
+            edu_2: "Formación técnica en electrónica, fundamentos de circuitos, sistemas digitales y telecomunicaciones.",
+            section_certs: "Certificaciones",
+            section_blog: "Writing",
+            blog_desc: "Artículos, tutoriales y reflexiones sobre tecnología, desarrollo y SysAdmin.",
+            blog_1_title: "Próximamente",
+            blog_1_desc: "Estoy empezando a escribir artículos técnicos en LinkedIn. Sígueme para no perdértelos.",
+            blog_btn: "Seguir en LinkedIn",
             footer_term: "Bienvenido al portafolio de Matías. Escribe <span class=\"text-emerald font-bold\">help</span> para comandos disponibles."
         },
         en: {
@@ -1058,6 +1179,7 @@ Hardware (HP RAID)<span class="text-emerald">[===================] 95%</span><br
             nav_projects: "Projects",
             nav_ecosystem: "Ecosystem",
             nav_skills: "Skills",
+            nav_experience: "Experience",
             nav_contact: "Contact",
             github_title: "GitHub Activity",
             github_loading: "Connecting to GitHub API...",
@@ -1110,6 +1232,32 @@ Hardware (HP RAID)<span class="text-emerald">[===================] 95%</span><br
             eco7_desc: "Regulatory compliance and transparency module for corporate/public entities. Facilitates the auditable registration and auditing of legal resolutions, data modification logs, and protection of public administrative faith.",
             eco8_title: "Virtual Public Library",
             eco8_desc: "Modular system for inventory administration and control, book lending, member registration, and stock control in virtual catalogs.",
+            eco9_title: "Grúas Valdivia",
+            eco9_desc: "Corporate website for a towing and crane services company. Professional design with service catalog, contact area, and local SEO optimization.",
+            eco10_title: "Memento Studio",
+            eco10_desc: "Creative website for a photography and audiovisual production studio. Interactive gallery, CSS animations, and immersive visual experience focused on creative portfolio.",
+            download_cv: "Download CV",
+            currently_title: "Currently",
+            currently_work_title: "IT Engineer",
+            currently_work_sub: "Municipalidad de Santa Cruz · On-site",
+            currently_work_desc: "Developing software, technical support and automation for the municipality. Implementing solutions with Django, Node.js and hybrid databases.",
+            currently_learn_title: "Learning",
+            currently_learn_desc: "Machine Learning & NLP on AWS (certifications in progress). Expanding my stack with TypeScript, advanced React and Docker in production.",
+            currently_goal_title: "Looking for",
+            currently_goal_desc: "New challenges as full-stack developer or SysAdmin. Open to on-site opportunities in O'Higgins or remote across Chile.",
+            section_experience: "Experience",
+            exp_desc: "My professional and academic journey in the world of technology.",
+            exp_1: "Software development, specialized technical support, server administration and automation of municipal processes.",
+            exp_2: "Web systems development with Node.js and PHP for municipal management. Collaboration on active and passive transparency modules.",
+            exp_3: "Wireless network maintenance, IP camera installation and configuration, user technical support.",
+            edu_1: "Comprehensive training in software development, databases, networks and technology project management.",
+            edu_2: "Technical training in electronics, circuit fundamentals, digital systems and telecommunications.",
+            section_certs: "Certifications",
+            section_blog: "Writing",
+            blog_desc: "Articles, tutorials and insights about technology, development and SysAdmin.",
+            blog_1_title: "Coming Soon",
+            blog_1_desc: "I'm starting to write technical articles on LinkedIn. Follow me so you don't miss them.",
+            blog_btn: "Follow on LinkedIn",
             footer_term: "Welcome to Matías' portfolio. Type <span class=\"text-emerald font-bold\">help</span> for available commands."
         }
     };

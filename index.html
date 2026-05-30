@@ -3,18 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Matías (Mtys24): desarrollo full-stack, SysAdmin y proyectos en Django, React, Python y cloud. Portafolio y contacto.">
+    <meta name="description" content="Matías Francisco Manríquez - Ingeniero Informático Full Stack & SysAdmin. Django, React, Python, AWS, Laravel. Portafolio profesional con proyectos enterprise y open source.">
+    <meta name="keywords" content="Matías Manríquez, Mtys24, desarrollador full stack, ingeniero informático, Django, React, AWS, Chile, Santa Cruz, portafolio">
+    <meta name="author" content="Matías Francisco Manríquez">
     <meta name="theme-color" content="#06080f">
-    <meta property="og:title" content="Matías (Mtys24) | Full-Stack Dev & SysAdmin">
-    <meta property="og:description" content="Desarrollo web, sistemas y operaciones. Proyectos y contacto.">
+    <meta property="og:title" content="Matías Francisco Manríquez | Full-Stack Dev & SysAdmin">
+    <meta property="og:description" content="Ingeniero Informático | Full Stack | Cloud & Automation | Infraestructura TI. Portafolio profesional con proyectos enterprise y open source.">
     <meta property="og:type" content="website">
-    <title>Matías (Mtys24) | Full-Stack Dev & SysAdmin</title>
+    <meta property="og:url" content="https://portafoliomatias.vercel.app/">
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/167946560?v=4">
+    <meta property="og:locale" content="es_CL">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Matías Francisco Manríquez | Full-Stack Dev & SysAdmin">
+    <meta name="twitter:description" content="Ingeniero Informático | Full Stack | Cloud & Automation | Infraestructura TI">
+    <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/167946560?v=4">
+    <link rel="canonical" href="https://portafoliomatias.vercel.app/">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Mtys24">
+    <title>Matías Francisco Manríquez | Full-Stack Dev & SysAdmin</title>
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Matías Francisco Manríquez",
+      "givenName": "Matías",
+      "familyName": "Manríquez",
+      "jobTitle": "Ingeniero Informático",
+      "description": "Full-Stack Developer & SysAdmin especializado en Django, React, AWS y soluciones enterprise para el sector público",
+      "url": "https://portafoliomatias.vercel.app/",
+      "sameAs": [
+        "https://www.linkedin.com/in/mat%C3%ADas-francisco-mar%C3%ADquez-manr%C3%ADquez-6133aa308/",
+        "https://github.com/Mtys24",
+        "https://www.instagram.com/mtys_24/"
+      ],
+      "knowsAbout": ["Django", "React", "Python", "AWS", "Laravel", "Docker", "MySQL", "MongoDB", "Node.js", "TypeScript"],
+      "alumniOf": ["INACAP"],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Municipalidad de Santa Cruz"
+      }
+    }
+    </script>
     <!-- Fonts: Space Grotesk (títulos), Inter (UI), Fira Code (terminal) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="./styles/main.css">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
 </head>
 <body class="bg-dark text-light antialiased">
     <!-- FOUC Prevention Script -->
@@ -32,7 +79,8 @@
     </script>
     
     <!-- Custom Cursor -->
-    <div class="custom-cursor" id="custom-cursor"></div>
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
 
     <!-- Boot Sequence Preloader -->
     <div id="preloader" class="preloader">
@@ -68,6 +116,7 @@
                 <a href="#about" data-i18n="nav_about">Sobre mí</a>
                 <a href="#projects" data-i18n="nav_projects">Proyectos</a>
                 <a href="#more-projects" data-i18n="nav_ecosystem">Ecosistema</a>
+                <a href="#experience" data-i18n="nav_experience">Trayectoria</a>
                 <a href="#skills" data-i18n="nav_skills">Habilidades</a>
                 <a href="#contact" data-i18n="nav_contact">Contacto</a>
             </nav>
@@ -288,7 +337,7 @@
                 <!-- Additional Projects Grid -->
                 <div class="projects-grid" id="additional-projects-grid">
                     <!-- Project 1: Módulo FirmaGob Chile (Enterprise) -->
-                    <article class="project-card interactive-card glass-card show" tabindex="0" role="button" aria-haspopup="dialog" data-category="enterprise">
+                    <article class="project-card interactive-card glass-card show" tabindex="0" role="button" aria-haspopup="dialog" data-category="enterprise" data-project-id="eco1">
                         <div class="card-inner">
                             <div class="card-accent-bar"></div>
                             <div class="project-header">
@@ -308,7 +357,7 @@
                     </article>
 
                     <!-- Project 2: Portal Digital de Patentes (Enterprise) -->
-                    <article class="project-card interactive-card glass-card show" tabindex="0" role="button" aria-haspopup="dialog" data-category="enterprise">
+                    <article class="project-card interactive-card glass-card show" tabindex="0" role="button" aria-haspopup="dialog" data-category="enterprise" data-project-id="eco2">
                         <div class="card-inner">
                             <div class="card-accent-bar"></div>
                             <div class="project-header">
@@ -328,7 +377,7 @@
                     </article>
 
                     <!-- Project 3: Escáner de Red (Open Source) -->
-                    <article class="project-card interactive-card glass-card show" tabindex="0" role="button" aria-haspopup="dialog" data-category="open-source">
+                    <article class="project-card interactive-card glass-card show" tabindex="0" role="button" aria-haspopup="dialog" data-category="open-source" data-project-id="eco3">
                         <div class="card-inner">
                             <div class="card-accent-bar"></div>
                             <div class="project-header">
@@ -349,7 +398,7 @@
                     </article>
 
                     <!-- Project 4: SOS Ayuda (Open Source) -->
-                    <article class="project-card interactive-card glass-card show" tabindex="0" role="button" aria-haspopup="dialog" data-category="open-source">
+                    <article class="project-card interactive-card glass-card show" tabindex="0" role="button" aria-haspopup="dialog" data-category="open-source" data-project-id="eco4">
                         <div class="card-inner">
                             <div class="card-accent-bar"></div>
                             <div class="project-header">
@@ -370,7 +419,7 @@
                     </article>
 
                     <!-- Project 5: Censurador de PDF (Open Source) -->
-                    <article class="project-card interactive-card glass-card show" tabindex="0" role="button" aria-haspopup="dialog" data-category="open-source">
+                    <article class="project-card interactive-card glass-card show" tabindex="0" role="button" aria-haspopup="dialog" data-category="open-source" data-project-id="eco5">
                         <div class="card-inner">
                             <div class="card-accent-bar"></div>
                             <div class="project-header">
@@ -391,7 +440,7 @@
                     </article>
 
                     <!-- Project 6: Portal de Atención Ciudadana (Enterprise) -->
-                    <article class="project-card interactive-card glass-card show" tabindex="0" role="button" aria-haspopup="dialog" data-category="enterprise">
+                    <article class="project-card interactive-card glass-card show" tabindex="0" role="button" aria-haspopup="dialog" data-category="enterprise" data-project-id="eco6">
                         <div class="card-inner">
                             <div class="card-accent-bar"></div>
                             <div class="project-header">
@@ -411,7 +460,7 @@
                     </article>
 
                     <!-- Project 7: Transparencia y Auditoría Municipal (Enterprise) -->
-                    <article class="project-card interactive-card glass-card show" tabindex="0" role="button" aria-haspopup="dialog" data-category="enterprise">
+                    <article class="project-card interactive-card glass-card show" tabindex="0" role="button" aria-haspopup="dialog" data-category="enterprise" data-project-id="eco7">
                         <div class="card-inner">
                             <div class="card-accent-bar"></div>
                             <div class="project-header">
@@ -430,7 +479,7 @@
                     </article>
 
                     <!-- Project 8: Biblioteca Pública (Open Source) -->
-                    <article class="project-card interactive-card glass-card show" tabindex="0" role="button" aria-haspopup="dialog" data-category="open-source">
+                    <article class="project-card interactive-card glass-card show" tabindex="0" role="button" aria-haspopup="dialog" data-category="open-source" data-project-id="eco8">
                         <div class="card-inner">
                             <div class="card-accent-bar"></div>
                             <div class="project-header">
@@ -446,6 +495,48 @@
                                 <li>JavaScript</li>
                                 <li>SQL</li>
                                 <li>Admin Panel</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- Project 9: Grúas Valdivia (Open Source) -->
+                    <article class="project-card interactive-card glass-card show" tabindex="0" role="button" aria-haspopup="dialog" data-category="open-source" data-project-id="eco9">
+                        <div class="card-inner">
+                            <div class="card-accent-bar"></div>
+                            <div class="project-header">
+                                <div class="project-icon"><i data-lucide="truck" class="text-cyan"></i></div>
+                                <div class="project-links">
+                                    <a href="https://github.com/Mtys24/Gruas-Valdivia" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i data-lucide="github"></i></a>
+                                </div>
+                            </div>
+                            <h3 data-i18n="eco9_title">Grúas Valdivia</h3>
+                            <p data-i18n="eco9_desc">Sitio web corporativo para una empresa de grúas y servicios de remolque. Diseño profesional con catálogo de servicios, área de contacto y optimización SEO para búsquedas locales.</p>
+                            <ul class="tech-tags">
+                                <li>JavaScript</li>
+                                <li>HTML5 / CSS3</li>
+                                <li>SEO Local</li>
+                                <li>Responsive</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- Project 10: Memento Studio (Open Source) -->
+                    <article class="project-card interactive-card glass-card show" tabindex="0" role="button" aria-haspopup="dialog" data-category="open-source" data-project-id="eco10">
+                        <div class="card-inner">
+                            <div class="card-accent-bar"></div>
+                            <div class="project-header">
+                                <div class="project-icon"><i data-lucide="palette" class="text-cyan"></i></div>
+                                <div class="project-links">
+                                    <a href="https://github.com/Mtys24/Memento-Studio" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i data-lucide="github"></i></a>
+                                </div>
+                            </div>
+                            <h3 data-i18n="eco10_title">Memento Studio</h3>
+                            <p data-i18n="eco10_desc">Sitio web creativo para un estudio de fotografía y producción audiovisual. Galería interactiva, animaciones CSS y experiencia visual inmersiva con enfoque en portfolio creativo.</p>
+                            <ul class="tech-tags">
+                                <li>JavaScript</li>
+                                <li>CSS Animations</li>
+                                <li>Gallery UI</li>
+                                <li>Creative Design</li>
                             </ul>
                         </div>
                     </article>
@@ -476,18 +567,47 @@
                 </div>
 
                 <div class="skills-grid">
-                    <!-- Dev -->
+                    <!-- Frontend -->
                     <div class="skill-category glass-card">
                         <div class="category-header">
-                            <i data-lucide="code-2" class="text-cyan"></i>
-                            <h3>Development</h3>
+                            <i data-lucide="palette" class="text-cyan"></i>
+                            <h3>Frontend</h3>
                         </div>
                         <ul class="skill-list">
-                            <li><i data-lucide="check-circle-2" class="text-cyan"></i> Python (Django)</li>
-                            <li><i data-lucide="check-circle-2" class="text-cyan"></i> PHP (Laravel)</li>
-                            <li><i data-lucide="check-circle-2" class="text-cyan"></i> JavaScript (React/Vue)</li>
-                            <li><i data-lucide="check-circle-2" class="text-cyan"></i> Node.js</li>
-                            <li><i data-lucide="check-circle-2" class="text-cyan"></i> HTML5 / Modern CSS3</li>
+                            <li><i data-lucide="check-circle-2" class="text-cyan"></i> React / Vue</li>
+                            <li><i data-lucide="check-circle-2" class="text-cyan"></i> TypeScript</li>
+                            <li><i data-lucide="check-circle-2" class="text-cyan"></i> JavaScript</li>
+                            <li><i data-lucide="check-circle-2" class="text-cyan"></i> HTML5 / CSS3 Moderno</li>
+                            <li><i data-lucide="check-circle-2" class="text-cyan"></i> Tailwind (conceptos)</li>
+                        </ul>
+                    </div>
+
+                    <!-- Backend -->
+                    <div class="skill-category glass-card">
+                        <div class="category-header">
+                            <i data-lucide="code-2" class="text-emerald"></i>
+                            <h3>Backend</h3>
+                        </div>
+                        <ul class="skill-list">
+                            <li><i data-lucide="check-circle-2" class="text-emerald"></i> Python (Django)</li>
+                            <li><i data-lucide="check-circle-2" class="text-emerald"></i> PHP (Laravel)</li>
+                            <li><i data-lucide="check-circle-2" class="text-emerald"></i> Node.js / Express</li>
+                            <li><i data-lucide="check-circle-2" class="text-emerald"></i> REST APIs</li>
+                            <li><i data-lucide="check-circle-2" class="text-emerald"></i> JWT / MFA OTP</li>
+                        </ul>
+                    </div>
+
+                    <!-- Databases -->
+                    <div class="skill-category glass-card">
+                        <div class="category-header">
+                            <i data-lucide="database" class="text-violet"></i>
+                            <h3>Bases de Datos</h3>
+                        </div>
+                        <ul class="skill-list">
+                            <li><i data-lucide="check-circle-2" class="text-violet"></i> MySQL / PostgreSQL</li>
+                            <li><i data-lucide="check-circle-2" class="text-violet"></i> MongoDB / NoSQL</li>
+                            <li><i data-lucide="check-circle-2" class="text-violet"></i> Microsoft SQL Server</li>
+                            <li><i data-lucide="check-circle-2" class="text-violet"></i> Modelado / Migraciones</li>
                         </ul>
                     </div>
 
@@ -505,25 +625,222 @@
                             <ul class="terminal-skill-list">
                                 <li><span class="text-emerald">[OK]</span> AlmaLinux / RedHat</li>
                                 <li><span class="text-emerald">[OK]</span> Docker & Container orchestration</li>
-                                <li><span class="text-emerald">[OK]</span> AWS Services & Cloud Ops</li>
-                                <li class="highlight-sysadmin">> Hardware: Configuración Servidores HP ProLiant (RAID 1) en DL380e Gen8</li>
+                                <li><span class="text-emerald">[OK]</span> AWS (Cloud, ML, Web App)</li>
+                                <li class="highlight-sysadmin">> Hardware: HP ProLiant (RAID 1) DL380e Gen8</li>
                             </ul>
                             <p><span class="prompt">$</span> <span class="cursor-blink">_</span></p>
                         </div>
                     </div>
 
-                    <!-- Data -->
+                    <!-- Data & Tools -->
                     <div class="skill-category glass-card">
                         <div class="category-header">
-                            <i data-lucide="database" class="text-emerald"></i>
-                            <h3>Data & Tools</h3>
+                            <i data-lucide="wrench" class="text-cyan"></i>
+                            <h3>Herramientas</h3>
                         </div>
                         <ul class="skill-list">
-                            <li><i data-lucide="check-circle-2" class="text-emerald"></i> SQL (MySQL, PostgreSQL)</li>
-                            <li><i data-lucide="check-circle-2" class="text-emerald"></i> MongoDB / NoSQL</li>
-                            <li><i data-lucide="check-circle-2" class="text-emerald"></i> Pandas / NumPy</li>
-                            <li><i data-lucide="check-circle-2" class="text-emerald"></i> Git / Bash Scripting</li>
+                            <li><i data-lucide="check-circle-2" class="text-cyan"></i> Git / Bash Scripting</li>
+                            <li><i data-lucide="check-circle-2" class="text-cyan"></i> Docker / Vercel</li>
+                            <li><i data-lucide="check-circle-2" class="text-cyan"></i> Pandas / NumPy</li>
+                            <li><i data-lucide="check-circle-2" class="text-cyan"></i> WordPress</li>
+                            <li><i data-lucide="check-circle-2" class="text-cyan"></i> Google APIs</li>
                         </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Currently Working On Section -->
+        <section id="currently" class="currently section-spacing reveal-up">
+            <div class="container">
+                <div class="section-header">
+                    <h2><span class="text-emerald">⚡</span> <span data-i18n="currently_title">Actualmente</span></h2>
+                    <div class="line-decorator"></div>
+                </div>
+                <div class="currently-grid">
+                    <div class="glass-card currently-card">
+                        <div class="currently-icon"><i data-lucide="briefcase" class="text-cyan"></i></div>
+                        <h3 data-i18n="currently_work_title">Ingeniero TI</h3>
+                        <p class="currently-sub" data-i18n="currently_work_sub">Municipalidad de Santa Cruz · Presencial</p>
+                        <p data-i18n="currently_work_desc">Desarrollando software, soporte técnico y automatización para la municipalidad. Implementando soluciones con Django, Node.js y bases de datos híbridas.</p>
+                    </div>
+                    <div class="glass-card currently-card">
+                        <div class="currently-icon"><i data-lucide="graduation-cap" class="text-emerald"></i></div>
+                        <h3 data-i18n="currently_learn_title">Aprendiendo</h3>
+                        <p data-i18n="currently_learn_desc">Machine Learning & NLP en AWS (certificaciones en curso). Expandiendo mi stack con TypeScript, React avanzado y Docker en producción.</p>
+                    </div>
+                    <div class="glass-card currently-card">
+                        <div class="currently-icon"><i data-lucide="target" class="text-violet"></i></div>
+                        <h3 data-i18n="currently_goal_title">Buscando</h3>
+                        <p data-i18n="currently_goal_desc">Nuevos desafíos como desarrollador full-stack o SysAdmin. Abierto a oportunidades presenciales en O'Higgins o remotas en todo Chile.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience & Education Timeline Section -->
+        <section id="experience" class="experience section-spacing reveal-up">
+            <div class="container">
+                <div class="section-header">
+                    <h2><span class="text-cyan">04.</span> <span data-i18n="section_experience">Trayectoria</span></h2>
+                    <div class="line-decorator"></div>
+                    <p class="section-desc mt-2" style="color: var(--text-secondary); max-width: 700px;" data-i18n="exp_desc">Mi recorrido profesional y académico en el mundo de la tecnología.</p>
+                </div>
+
+                <div class="timeline">
+                    <!-- Education 1: Electrónica -->
+                    <div class="timeline-block">
+                        <div class="timeline-marker edu"></div>
+                        <div class="timeline-content glass-card">
+                            <span class="timeline-date">2018 - 2021</span>
+                            <h3>Técnico en Electrónica</h3>
+                            <h4>Instituto Politécnico Santa Cruz</h4>
+                            <p data-i18n="edu_2">Formación técnica en electrónica, fundamentos de circuitos, sistemas digitales y telecomunicaciones.</p>
+                            <ul class="tech-stack">
+                                <li>Electrónica</li>
+                                <li>Telecomunicaciones</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Experience 1: Casino Colchagua -->
+                    <div class="timeline-block">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content glass-card">
+                            <span class="timeline-date">dic 2021 - feb 2022</span>
+                            <h3>Técnico Electrónico (Práctica)</h3>
+                            <h4>Casino Colchagua</h4>
+                            <p data-i18n="exp_3">Mantenimiento de redes inalámbricas, instalación y configuración de cámaras IP, soporte técnico a usuarios y administración de equipos electrónicos.</p>
+                            <ul class="tech-stack">
+                                <li>Redes</li>
+                                <li>Cámaras IP</li>
+                                <li>Soporte Técnico</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Education 2: INACAP -->
+                    <div class="timeline-block">
+                        <div class="timeline-marker edu"></div>
+                        <div class="timeline-content glass-card">
+                            <span class="timeline-date">2021 - 2025</span>
+                            <h3>Ingeniería Informática</h3>
+                            <h4>INACAP</h4>
+                            <p data-i18n="edu_1">Formación integral en desarrollo de software, bases de datos, redes y gestión de proyectos tecnológicos.</p>
+                            <ul class="tech-stack">
+                                <li>Full Stack</li>
+                                <li>Bases de Datos</li>
+                                <li>Redes</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Experience 2: Municipalidad Práctica -->
+                    <div class="timeline-block">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content glass-card">
+                            <span class="timeline-date">ene 2026 - mar 2026</span>
+                            <h3>Ingeniero de Software (Práctica)</h3>
+                            <h4>Municipalidad de Santa Cruz</h4>
+                            <p data-i18n="exp_2">Desarrollo de sistemas web con Node.js y PHP para la gestión municipal. Colaboración en la implementación de módulos de transparencia activa y pasiva, integración con APIs gubernamentales y bases de datos relacionales.</p>
+                            <ul class="tech-stack">
+                                <li>Node.js</li>
+                                <li>PHP</li>
+                                <li>TypeScript</li>
+                                <li>Laravel</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Experience 3: Municipalidad Actual -->
+                    <div class="timeline-block">
+                        <div class="timeline-marker current"></div>
+                        <div class="timeline-content glass-card">
+                            <span class="timeline-date">mar 2026 - Presente</span>
+                            <h3>Ingeniero TI</h3>
+                            <h4>Municipalidad de Santa Cruz</h4>
+                            <p data-i18n="exp_1">Desarrollo de software, soporte técnico especializado, administración de servidores y automatización de procesos municipales. Implementación de soluciones con Django, Node.js, PHP, MySQL y MongoDB.</p>
+                            <ul class="tech-stack">
+                                <li>Django</li>
+                                <li>Node.js</li>
+                                <li>PHP</li>
+                                <li>MySQL</li>
+                                <li>MongoDB</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="certifications section-spacing reveal-up">
+            <div class="container">
+                <div class="section-header">
+                    <h2><span class="text-cyan">05.</span> <span data-i18n="section_certs">Certificaciones</span></h2>
+                    <div class="line-decorator"></div>
+                </div>
+                <div class="certs-grid">
+                    <div class="glass-card cert-card">
+                        <div class="cert-badge"><i data-lucide="cloud" class="text-emerald"></i></div>
+                        <h3>AWS Cloud Web Application Builder</h3>
+                        <span class="cert-issuer">Amazon Web Services</span>
+                        <span class="cert-date">mar 2026</span>
+                    </div>
+                    <div class="glass-card cert-card">
+                        <div class="cert-badge"><i data-lucide="bot" class="text-emerald"></i></div>
+                        <h3>AWS ML for NLP</h3>
+                        <span class="cert-issuer">Amazon Web Services</span>
+                        <span class="cert-date">mar 2026</span>
+                    </div>
+                    <div class="glass-card cert-card">
+                        <div class="cert-badge"><i data-lucide="brain" class="text-emerald"></i></div>
+                        <h3>AWS ML Foundations</h3>
+                        <span class="cert-issuer">Amazon Web Services</span>
+                        <span class="cert-date">mar 2026</span>
+                    </div>
+                    <div class="glass-card cert-card">
+                        <div class="cert-badge"><i data-lucide="code-2" class="text-cyan"></i></div>
+                        <h3>AWS Cloud Developing</h3>
+                        <span class="cert-issuer">Amazon Web Services</span>
+                        <span class="cert-date">feb 2026</span>
+                    </div>
+                    <div class="glass-card cert-card">
+                        <div class="cert-badge"><i data-lucide="layers" class="text-cyan"></i></div>
+                        <h3>AWS Cloud Foundations</h3>
+                        <span class="cert-issuer">Amazon Web Services</span>
+                        <span class="cert-date">jul 2024</span>
+                    </div>
+                    <div class="glass-card cert-card">
+                        <div class="cert-badge"><i data-lucide="activity" class="text-violet"></i></div>
+                        <h3>CCNA: Introduction to Networks</h3>
+                        <span class="cert-issuer">Cisco</span>
+                        <span class="cert-date">ago 2024</span>
+                    </div>
+                    <div class="glass-card cert-card">
+                        <div class="cert-badge"><i data-lucide="message-square" class="text-violet"></i></div>
+                        <h3>Fundamentos de ChatGPT</h3>
+                        <span class="cert-issuer">Santander Open Academy</span>
+                        <span class="cert-date">mar 2026</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog / Writing Section -->
+        <section id="blog" class="blog section-spacing reveal-up">
+            <div class="container">
+                <div class="section-header">
+                    <h2><span class="text-cyan">06.</span> <span data-i18n="section_blog">Writing</span></h2>
+                    <div class="line-decorator"></div>
+                    <p class="section-desc mt-2" style="color: var(--text-secondary); max-width: 700px;" data-i18n="blog_desc">Artículos, tutoriales y reflexiones sobre tecnología, desarrollo y SysAdmin.</p>
+                </div>
+                <div class="blog-grid">
+                    <div class="glass-card blog-card">
+                        <div class="blog-icon"><i data-lucide="linkedin" class="text-cyan"></i></div>
+                        <h3 data-i18n="blog_1_title">Próximamente</h3>
+                        <p data-i18n="blog_1_desc">Estoy empezando a escribir artículos técnicos en LinkedIn. Sígueme para no perdértelos.</p>
+                        <a href="https://www.linkedin.com/in/mat%C3%ADas-francisco-mar%C3%ADquez-manr%C3%ADquez-6133aa308/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary glass-btn"><i data-lucide="external-link"></i> <span data-i18n="blog_btn">Seguir en LinkedIn</span></a>
                     </div>
                 </div>
             </div>
@@ -543,6 +860,13 @@
                             <h3 data-i18n="about_title">👋 ¡Hola! Soy Matías Francisco Manríquez</h3>
                             <p data-i18n="about_p1">Desarrollador junior apasionado por desentrañar problemas complejos tanto a nivel de código frontend/backend como en la optimización y seguridad de servidores. Escribo código claro, robusto y eficiente para crear soluciones digitales que dejen una sonrisa en el equipo.</p>
                             <p data-i18n="about_p2">¿Tienes un reto técnico, una idea innovadora o un servidor que necesita mantenimiento profundo? ¡Inicia un ping y hablemos de tecnología!</p>
+                            <div class="about-links">
+                                <a href="https://github.com/Mtys24" target="_blank" rel="noopener noreferrer" class="btn btn-secondary glass-btn" aria-label="GitHub"><i data-lucide="github"></i> GitHub</a>
+                                <a href="https://www.linkedin.com/in/mat%C3%ADas-francisco-mar%C3%ADquez-manr%C3%ADquez-6133aa308/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary glass-btn" aria-label="LinkedIn"><i data-lucide="linkedin"></i> LinkedIn</a>
+                                <a href="https://www.instagram.com/mtys_24/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary glass-btn" aria-label="Instagram"><i data-lucide="camera"></i> Instagram</a>
+                                <a href="mailto:matiasmanriquez123456@gmail.com" class="btn btn-secondary glass-btn" aria-label="Email"><i data-lucide="mail"></i> Email</a>
+
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -565,6 +889,10 @@
                         <input type="hidden" name="_captcha" value="false">
                         <input type="hidden" name="_subject" value="Nuevo Mensaje del Portafolio">
                         <input type="hidden" name="_template" value="box">
+                        <!-- Honeypot anti-spam -->
+                        <div style="position:absolute;left:-9999px;" aria-hidden="true">
+                            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+                        </div>
                         <button type="submit" class="btn btn-primary w-full">
                             <span data-i18n="contact_send">Enviar Transmisión</span> <i data-lucide="send" class="icon-small"></i>
                         </button>
@@ -605,7 +933,7 @@
     <!-- Global Project Modal -->
     <dialog id="project-modal" class="project-modal" aria-labelledby="modal-title" aria-describedby="modal-desc">
         <div class="modal-inner">
-            <button class="close-modal" aria-label="Cerrar detalles"><i data-lucide="x"></i></button>
+            <button class="close-modal" data-close-modal aria-label="Cerrar detalles"><i data-lucide="x"></i></button>
             <div class="modal-header">
                 <div class="modal-icon" id="modal-icon-container"></div>
                 <h3 id="modal-title">Título del Proyecto</h3>
@@ -617,5 +945,12 @@
     </dialog>
 
     <script src="./js/app.js"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').catch(() => {});
+        });
+      }
+    </script>
 </body>
 </html>
